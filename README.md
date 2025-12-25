@@ -1,8 +1,13 @@
-# Blade Media
+# BladeMedia
 A simple & easy way to setup an automated Jellyfin-based media server. 
 
 *Created by Blade (@SCOPEDDDXYZ) with the help of AI.*
 
+
+# Installation
+
+
+## Method 1: Pure Docker Compose (No Organizer Script)
 This docker-compose based setup script utilizes the following services:
 - MediaManager (This is an all-in-one replacement for Radarr, Sonarr & Jellyseerr.)
 - Jellyfin (My media server manager of choice. Open source, free & built by an awesome team.)
@@ -30,3 +35,20 @@ Updating the stack is simple. All you need to do is this:
 - Once you've taken the stack down run this command: ```docker compose pull```
 - After that you can run: ```docker compose up -d```
 - And you're good to go! 
+
+## Method 2: BladeMedia All-in-One Script
+This script is slightly different. It still installs the same Docker Compose file, prompting you for nearly the same info, but at the same time, it also installs BladeMedia-Organizer. 
+
+BladeMedia-Organizer is a fix for when media organization breaks. It not only organizes files into a cleanly-organized setup, but also renames everything to an easily readable setup that Jellyfin will easily read.
+
+### What this setup does.
+This setup installs both a Python script & a Docker Compose file. The Docker Compose script will run your media stack. The Python script will run your organizing. The Python script runs hourly & as long as you setup a Discord Webhook link, it'll notify you how many things were moved, skipped & when it last ran. 
+
+1. Install the script.
+  Install the script onto your machine. Use wget, or however works best for you.
+2. Make the script executable.
+  Run `chmod +x BladeMedia-AIO-Installer.sh`
+3. Run the script.
+  Run `./BladeMedia-AIO-Installer.sh`
+4. Setup the services via WebUI
+  From here, you're basically done. 
